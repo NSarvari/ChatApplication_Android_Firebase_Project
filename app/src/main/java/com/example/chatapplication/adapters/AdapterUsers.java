@@ -39,6 +39,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
         //get data
+        String hisUID=userList.get(i).getUid();
         String userName=userList.get(i).getName();
         String userEmail = userList.get(i).getEmail();
 
@@ -51,6 +52,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyHolder> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, ""+userEmail,Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context,ChatActivity.class);
+                intent.putExtra("hisUid",hisUID);
+                context.startActivity(intent);
             }
         });
     }

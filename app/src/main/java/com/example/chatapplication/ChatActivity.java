@@ -15,7 +15,8 @@ public class ChatActivity extends AppCompatActivity {
     //views from xml
     Toolbar toolbar;
     RecyclerView recyclerView;
-    TextView nameTv, userStatuesTv;
+    ImageView profileTv;
+    TextView nameTv;
     EditText messageEt;
     ImageButton sendBtn;
 
@@ -29,6 +30,7 @@ public class ChatActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
         recyclerView = findViewById(R.id.chat_recyclerView);
+        profileTv = findViewById(R.id.nav_profile);
         nameTv = findViewById(R.id.nameTv);
         messageEt = findViewById(R.id.messageEt);
         sendBtn = findViewById(R.id.sendBtn);
